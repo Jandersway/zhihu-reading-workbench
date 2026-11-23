@@ -1,0 +1,31 @@
+{
+  "name": "zhihu-agent-workbench",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev --host 127.0.0.1 --port 3000",
+    "build": "nuxt build",
+    "check": "nuxt typecheck",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.0",
+    "h3": "^1.15.11",
+    "lucide-vue-next": "^0.577.0",
+    "markdown-it": "^15.0.3",
+    "nuxt": "4.6.4",
+    "tailwindcss": "^4.3.0",
+    "vue": "^3.5.0",
+    "vue-router": "^5.4.0"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.2.0",
+    "typescript": "~5.9.0",
+    "vue-tsc": "^3.2.0"
+  },
+  "overrides": {
+    "archiver": {
+      "readdir-glob": "4.0.0"
+    }
+  }
+}
