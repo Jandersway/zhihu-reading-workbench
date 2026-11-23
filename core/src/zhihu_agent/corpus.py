@@ -65,7 +65,7 @@ class Article:
 
 class Corpus:
     def __init__(self, settings: Settings):
-        self.root = settings.project_root
+        self.root = settings.project_root.resolve()
         self.source_root = PureWindowsPath(settings.source_root)
         self.data_dir = settings.data_dir
         self.articles: dict[str, Article] = {}

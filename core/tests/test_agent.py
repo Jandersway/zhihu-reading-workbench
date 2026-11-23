@@ -60,6 +60,11 @@ class AgentTests(unittest.TestCase):
         self.assertIn("IDE", article["text"])
         self.assertEqual(article["source"], hits[0]["source"])
 
+    def test_archive_root_is_resolved_before_path_containment_check(self) -> None:
+        archive_root = self.settings.project_root / "collections" / ".."
+        corpus = Corpus(replace(self.settings, project_root=archive_root))
+        self.assertIn("IDE", corpus.read("101")["text"])
+
     def test_model_chosen_search_then_read_then_cited_answer(self) -> None:
         client = ScriptedClient(
             [
